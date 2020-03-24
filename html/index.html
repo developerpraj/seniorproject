@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard | Code Academy</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/d3.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="left-nav">
+            <ul>
+                <li id="dashboard" class="left-nav-li selected"><i class="fas fa-home"></i> Dashboard</li>
+                <li id="applicant-listing" class="left-nav-li"><i class="far fa-folder-open"></i> All Applications</li>
+                <li id="applicant-listing-approved" class="left-nav-li"><i class="far fa-check-circle"></i> Approved
+                    Applications</li>
+                <li id="applicant-listing-denied" class="left-nav-li"><i class="fas fa-user-times"></i> Denied
+                    Applications</li>
+                <li id="applicant-listing-wait" class="left-nav-li"><i class="fas fa-chart-bar"></i> Wait Listed
+                    Applicator</li>
+                <li id="analytics" class="left-nav-li"><i class="fas fa-chart-line"></i> Analytics</li>
+                <li id="settings" class="left-nav-li"><i class="fas fa-cogs"></i> Settings</li>
+            </ul>
+        </div>
+        <div id="right-content">
+            <div id="dashboard-display" class="right-content-div">
+
+                <div class="box-info one-fourth" onclick="displayApplicants()">
+                    <span class="num-top">25</span>
+                    <span class="desc-mid">
+                        All<br>Applications
+                    </span>
+                    <span class="btm-grey">Last 24 hours</span>
+                </div>
+                <div class="box-info one-fourth" onclick="displayApprovedApplicants()">
+                    <span class="num-top">1</span>
+                    <span class="desc-mid">Approved<br>Applications</span>
+                    <span class="btm-grey">Last 24 hours</span>
+                </div>
+                <div class="box-info one-fourth" onclick="displayDeniedApplicants()">
+                    <span class="num-top">1</span>
+                    <span class="desc-mid">Denied<br>Applications</span>
+                    <span class="btm-grey">Last 24 hours</span>
+                </div>
+                <div class="box-info one-fourth" onclick="displayWaitApplicants()">
+                    <span class="num-top">2</span>
+                    <span class="desc-mid">Wait-listed<br>Applications</span>
+                    <span class="btm-grey">Last 24 hours</span>
+                </div>
+            </div>
+            <div id="applicant-listing-display" class="hidden right-content-div">
+                <div style="text-align: justify;">
+                    <button class="border-black">Home</button>
+                    <input type="text" placeholder="Search" class="search form-control">
+                    <select name="" id="" class="form-control">
+                        <option value="">All Applications</option>
+                    </select>
+                    <span class="grey-span">Total Applications: 4</span>
+                    <button class="border-black f-right" id="create-new">Create New Applicant</button>
+                </div>
+                <table class="applicants">
+                    <tr>
+                        <th>Date Submitted</th>
+                        <th>Application Number</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Location</th>
+                        <th>Applicant Score</th>
+                        <th>Action Taken</th>
+                        <th>View Application</th>
+                    </tr>
+                    <tr>
+                        <td>10/21/2019</td>
+                        <td>01832</td>
+                        <td>Jane Doe</td>
+                        <td>20</td>
+                        <td>Jackson</td>
+                        <td>9</td>
+                        <td><button class="approved-btn">Approved</button></td>
+                        <td>
+                            <i class="far fa-clock"></i>
+                            <i class="fas fa-check"></i>
+                            <i class="far fa-copy"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10/22/2019</td>
+                        <td>01832</td>
+                        <td>John Doe</td>
+                        <td>20</td>
+                        <td>Jackson</td>
+                        <td>9</td>
+                        <td><button class="rejected-btn">Denied</button></td>
+                        <td>
+                            <i class="far fa-clock"></i>
+                            <i class="fas fa-check"></i>
+                            <i class="far fa-copy"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10/25/2019</td>
+                        <td>01832</td>
+                        <td>Tom Sawyer</td>
+                        <td>20</td>
+                        <td>Jackson</td>
+                        <td>9</td>
+                        <td><button class="wait-btn">Wait-listed</button></td>
+                        <td>
+                            <i class="far fa-clock"></i>
+                            <i class="fas fa-check"></i>
+                            <i class="far fa-copy"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10/25/2019</td>
+                        <td>01832</td>
+                        <td>Justin Time</td>
+                        <td>20</td>
+                        <td>Jackson</td>
+                        <td>9</td>
+                        <td><button class="wait-btn">Wait-listed</button></td>
+                        <td>
+                            <i class="far fa-clock"></i>
+                            <i class="fas fa-check"></i>
+                            <i class="far fa-copy"></i>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="applicant-display" class="hidden right-content-div">
+                <div>
+                    <button class="black-btn">Back</button>
+                    <h2 class="h2-inline">Application: #00123</h2>
+                    <label for="status-application"></label>
+                    <button class="approve f-right"><i class="fas fa-thumbs-up"></i></button>
+                    <button class="wait f-right"><i class="fas fa-pause"></i></button>
+                    <button class="deny f-right"><i class="fas fa-user-times"></i></button>
+                </div>
+                <div id="application-edit">
+                    <div>
+                        <div class="one-third">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="input-form" required="required">
+                        </div>
+                        <div class="one-third">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="input-form" required="required">
+                        </div>
+                        <div class="one-third">
+                            <label for="gender">Gender</label>
+                            <select name="" class="input-form" id="gender">
+                                <option value=""></option>
+                                <option value="">Male</option>
+                                <option value="">Female</option>
+                            </select>
+                        </div>
+                        <div class="one-third">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" class="input-form" name="" id="dob">
+                        </div>
+                        
+                    </div>
+                    <hr>
+                    <div>
+                            <div class="one-third">
+                                    <label for="phoneNum">Phone Number</label>
+                                    <input type="tel" name="" id="phoneNum" class="input-form">
+                            </div>
+                            <div class="one-third">
+                                    <label for="emailAddress">E-mail Address</label>
+                                    <input type="email" id="emailAddress" class="input-form">
+                            </div>
+                            <div class="one-third">
+                                    <label for="nativeLanguage">Native Language</label>
+                                    <select name="" id="" class="input-form">
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                            </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="one-third">
+                                <label for="eduLvl">Level of Education</label>
+                                <select name="" id="eduLvl" class="input-form">
+                                    <option value=""></option>
+                                    <option value="">High School/GED</option>
+                                    <option value="">Associate's Degree</option>
+                                    <option value="">Bachelors Degree</option>
+                                    <option value="">Doctorate</option>
+                                    <option value="">Masters</option>
+                                </select>
+                        </div>
+                        <div class="one-third">
+                                <label for="highSchoolGrad">High School Graduation</label>
+                                <input type="number" class="input-form" name="" max="2019" id="highSchoolGrad">
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="one-third">
+                                <label for="addressOne">Street Address</label>
+                                <input type="text" id="addressOne" class="input-form">
+                        </div>
+                        <div class="one-third">
+                                <label for="addressTwo">Address Line 2</label>
+                                <input type="text" id="addressTwo" class="input-form">
+                        </div>
+                        <div class="one-third">
+                                <label for="cityInput">City</label>
+                                <input type="text" id="cityInput" class="input-form">
+                        </div>
+                        <div class="one-third">
+                                <label for="stateRegion">State/Province/Region</label>
+                                <select name="" id="stateRegion" class="input-form"></select>
+                        </div>
+                    </div>
+                    <div><input type="submit" class="border-black" value="Submit Form"></div>
+                </div>
+            </div>
+        </div>
+
+            <div id="analytics-display" class="hidden right-content-div">
+                <h2>Analytics</h2>
+            </div>
+
+            <div id="settings-display" class="hidden right-content-div">
+                <h2>Settings</h2>
+
+            </div>
+            <div id="applicant-listing-wait-display" class="hidden right-content-div">
+                <h2>Wait-Listed Applicants</h2>
+                <table class="applicants">
+                    <tr>
+                        <th>Date Submitted</th>
+                        <th>Application Number</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Location</th>
+                        <th>Applicant Score</th>
+                        <th>Action Taken</th>
+                        <th>View Application</th>
+                    </tr>
+                    <tr>
+                        <td>10/25/2019</td>
+                        <td>01832</td>
+                        <td>Tom Sawyer</td>
+                        <td>20</td>
+                        <td>Jackson</td>
+                        <td>9</td>
+                        <td><button class="wait-btn">Wait-listed</button></td>
+                        <td>
+                            <i class="far fa-clock"></i>
+                            <i class="fas fa-check"></i>
+                            <i class="far fa-copy"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10/25/2019</td>
+                        <td>01832</td>
+                        <td>Justin Time</td>
+                        <td>20</td>
+                        <td>Jackson</td>
+                        <td>9</td>
+                        <td><button class="wait-btn">Wait-listed</button></td>
+                        <td>
+                            <i class="far fa-clock"></i>
+                            <i class="fas fa-check"></i>
+                            <i class="far fa-copy"></i>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="applicant-listing-denied-display" class="hidden right-content-div">
+                <h2>Denied Applicants</h2>
+                <table class="applicants">
+                    <tr>
+                        <th>Date Submitted</th>
+                        <th>Application Number</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Location</th>
+                        <th>Applicant Score</th>
+                        <th>Action Taken</th>
+                        <th>View Application</th>
+                    </tr>
+                    <tr>
+                        <td>10/22/2019</td>
+                        <td>01832</td>
+                        <td>John Doe</td>
+                        <td>20</td>
+                        <td>Jackson</td>
+                        <td>9</td>
+                        <td><button class="rejected-btn">Denied</button></td>
+                        <td>
+                            <i class="far fa-clock"></i>
+                            <i class="fas fa-check"></i>
+                            <i class="far fa-copy"></i>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="applicant-listing-approved-display" class="hidden right-content-div">
+                <h2>Approved Applicants</h2>
+                <table class="applicants">
+                    <tr>
+                        <th>Date Submitted</th>
+                        <th>Application Number</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Location</th>
+                        <th>Applicant Score</th>
+                        <th>Action Taken</th>
+                        <th>View Application</th>
+                    </tr>
+                    <tr>
+                        <td>10/21/2019</td>
+                        <td>01832</td>
+                        <td>Jane Doe</td>
+                        <td>20</td>
+                        <td>Jackson</td>
+                        <td>9</td>
+                        <td><button class="approved-btn">Approved</button></td>
+                        <td>
+                            <i class="far fa-clock"></i>
+                            <i class="fas fa-check"></i>
+                            <i class="far fa-copy"></i>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="../javascriptHandlers/frontEndHandler.js"></script>
+</footer>
+
+</html>

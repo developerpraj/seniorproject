@@ -1,0 +1,228 @@
+html,body {
+    padding:0;
+    margin:0;
+}
+#container {
+    overflow:hidden;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+div.one-third {
+    display:inline-block;
+    width: 20%;
+    margin-bottom: 10px;
+    vertical-align: top;
+}
+
+div.one-third label {
+    display:block;
+}
+
+.f-right {
+    float:right;
+}
+.hidden {
+    display:none;
+}
+.center {
+    text-align: center;
+}
+.box-info.one-fourth {
+    width: 20%;
+    margin-right: 20px;
+    box-sizing:border-box;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    padding: 20px;
+    text-align:center;
+    display:inline-block;
+    vertical-align: top;
+}
+.box-info.one-fourth .num-top {
+    font-size: 35px;
+    font-family: inherit;
+}
+.box-info.one-fourth .desc-mid {
+    display:block;
+    font-size: 20px;
+    font-weight:bold;
+}
+button.border-black, .border-black {
+    padding: 12px 25px;
+    font-size: 17px;
+    font-family: inherit;
+    border: 1px solid #333;
+    background-color: #fff;
+}
+.box-info.one-fourth .btm-grey {
+    color: #555;
+    padding-top: 15px;
+    display:block;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 17px;
+    font-family:inherit;
+    font-family: inherit;
+}
+table.applicants {
+    width: 100%;
+    font-size: 17px;
+    text-align:center;
+}
+.h2-inline {
+    display: inline-block;
+    vertical-align: top;
+}
+.f-right {
+    float:right;
+}
+button.wait,button.deny,button.approve {
+    color: #fff;
+    border-radius: 25px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    border:none;
+}
+.input-form {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+button.wait {
+    background-color: #f1c40f;
+}
+button.deny {
+    background-color: #e74c3c;
+}
+
+button.approve {
+    background-color: #27ae60;
+}
+
+button.wait-btn {
+    background-color: #f1c40f;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 8px;
+    border: 3px solid #f1c40f;
+    width: 150px;
+}
+
+button.approved-btn {
+    background-color: #27ae60;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 8px;
+    border: 3px solid #27ae60;
+    width: 150px;
+}
+
+button.rejected-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 8px;
+    border: 3px solid #e74c3c;
+    width: 150px;
+}
+
+table.applicants tr th {
+    font-weight:bold;
+}
+
+.search.form-control {
+    border-radius: 20px;
+    background-color: #fff;
+    margin: 0 20px;
+    padding: 10px 15px;
+}
+
+span.grey-span {
+    background-color: #ccc;
+    color: #fff;
+    font-family:inherit;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight:bold;
+    display:inline-block;
+    margin: 0 20px;
+    vertical-align: top;
+}
+
+
+div#left-nav {
+    width: 250px;
+    display:inline-block;
+    box-sizing:border-box;
+    vertical-align:top;
+    padding:10px 0;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+}
+#right-content {
+    width: calc(100vw - 270px);
+    display:inline-block;
+    box-sizing:border-box;
+    vertical-align:top;
+}
+
+.right-content-div {
+    box-sizing:border-box;
+    padding: 15px;
+}
+.right-content-div h2 {
+    margin:0;
+    padding:0;
+}
+
+div#left-nav ul {
+    margin:0;
+    padding:0;
+}
+div#left-nav ul li.left-nav-li {
+    list-style-type:none;
+    display:block;
+    padding: 15px 10px;
+    width: 100%;
+    box-sizing:border-box;
+}
+div#left-nav ul li.left-nav-li:hover {
+    cursor:pointer;
+    color: #34ace0;
+}
+div#left-nav ul li.left-nav-li.selected {
+    color: #34ace0;
+}
+
+div#left-nav ul li.left-nav-li i {
+    padding-right: 10px;
+}
+
+.black-btn {
+    border: 2px solid #000;
+    font-family: inherit;
+    font-weight:bold;
+    width: 120px;
+    padding: 10px 25px;
+    text-transform: capitalize;
+    background-color: #fff;
+}
+input.input-form {
+    padding: 5px;
+    font-family: inherit;
+}
+select.input-form {
+    padding: 5px ;
+    font-family: inherit;
+}

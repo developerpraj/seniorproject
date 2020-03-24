@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Application</title>
+    <style>
+        html,body {
+            padding:0;
+            margin:0;
+        }
+        #container {
+            width: 100%;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+            <div id="left-nav">
+                    <ul>
+                        <li class="left-nav-li"><i class="fas fa-home"></i> Dashboard</li>
+                        <li class="left-nav-li"><i class="far fa-folder-open"></i> All Applications</li>
+                        <li class="left-nav-li"><i class="far fa-check-circle"></i> Approved Applications</li>
+                        <li class="left-nav-li"><i class="fas fa-user-times"></i> Denied Applications</li>
+                        <li class="left-nav-li"><i class="fas fa-chart-bar"></i> Wait Listed Applicator</li>
+                        <li class="left-nav-li"><i class="fas fa-chart-line"></i> Analytics</li>
+                        <li class="left-nav-li"><i class="fas fa-cogs"></i> Settings</li>
+                    </ul>
+                </div>
+                <div id="right-content">
+                    <div id="applicant-display">
+                        <div>
+                                <button>Back</button>
+                                <h2>Application: #00123</h2>
+                                <label for="status-application"></label>
+                                <select name="" id="status-application">
+                                    <option value=""></option>
+                                    <option value="">Pending</option>
+                                    <option value="">Reject</option>
+                                    <option value="">Waist List</option>
+                                    <option value="">Approve</option>
+                                </select>
+                        </div>
+                        <div id="application-edit">
+                            <div>
+                                <label for="firstName">First Name</label>
+                                <input type="text" required="required">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" required="required">
+                                <label for="gender">Gender</label>
+                                <select name="" id="gender">
+                                    <option value=""></option>
+                                    <option value="">Male</option>
+                                    <option value="">Female</option>
+                                </select>
+                                <label for="dob">Date of Birth</label>
+                                <input type="date" name="" id="dob">
+                            </div>
+                            <hr>
+                            <div>
+                                <label for="phoneNum">Phone Number</label>
+                                <input type="tel" name="" id="phoneNum">
+                                <label for="emailAddress">E-mail Address</label>
+                                <input type="email" id="emailAddress">
+                            </div>
+                            <div>
+                                <label for="eduLvl">Level of Education</label>
+                                <select name="" id="eduLvl">
+                                    <option value=""></option>
+                                    <option value="">High School/GED</option>
+                                    <option value="">Associate's Degree</option>
+                                    <option value="">Bachelors Degree</option>
+                                    <option value="">Doctorate</option>
+                                    <option value="">Masters</option>
+                                </select>
+                                <label for="highSchoolGrad">High School Graduation</label>
+                                <input type="number" name="" max="2019" id="highSchoolGrad">
+                                <label for="nativeLanguage">Native Language</label>
+                                <select name="" id="">
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="addressOne">Street Address</label>
+                                <input type="text" id="addressOne">
+                                <label for="addressTwo">Address Line 2</label>
+                                <input type="text" id="addressTwo">
+                                <label for="cityInput">City</label>
+                                <input type="text" id="cityInput">
+                                <label for="stateRegion">State/Province/Region</label>
+                                <select name="" id="stateRegion">
+
+                                </select>
+                            </div>
+                            <div><input type="submit" value=""></div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</body>
+</html>
